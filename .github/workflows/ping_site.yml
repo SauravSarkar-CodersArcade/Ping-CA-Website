@@ -1,0 +1,29 @@
+name: Ping Site Every 10 Minutes
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'   # This cron expression runs the task every 10 minutes
+  workflow_dispatch:         # This allows you to manually trigger the workflow if needed
+
+jobs:
+  ping_site:
+    runs-on: ubuntu-latest  # Use a Linux runner (or windows-latest if you need Windows)
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8  # Or the Python version you want to use
+
+      - name: Install dependencies
+        run: |
+          pip install requests  # Install any necessary libraries (e.g., requests)
+
+      - name: Run the Ping Script
+        run: |
+          python ping_site.py  # Run your Python script that pings the website
+        env:
+          URL: https://codersarcade.onrender.com  # Pass any environment variables like the URL here
