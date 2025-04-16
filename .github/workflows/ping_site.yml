@@ -1,4 +1,4 @@
-name: Ping Site Every 10 Minutes
+name: Ping Site Every 5-10 Minutes
 
 on:
   schedule:
@@ -27,3 +27,5 @@ jobs:
           python scripts/ping_site.py  # Run your Python script that pings the website
         env:
           URL: https://codersarcade.onrender.com  # Pass any environment variables like the URL here
+# dummy change to refresh schedule
+          
