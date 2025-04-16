@@ -24,6 +24,6 @@ jobs:
 
       - name: Run the Ping Script
         run: |
-          python ping_site.py  # Run your Python script that pings the website
+          python scripts/ping_site.py  # Run your Python script that pings the website
         env:
           URL: https://codersarcade.onrender.com  # Pass any environment variables like the URL here
